@@ -1,0 +1,140 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 220 20% 4%;
+    --foreground: 210 20% 95%;
+    --card: 220 20% 7%;
+    --card-foreground: 210 20% 95%;
+    --popover: 220 20% 7%;
+    --popover-foreground: 210 20% 95%;
+    --primary: 185 100% 50%;
+    --primary-foreground: 220 20% 4%;
+    --secondary: 220 15% 14%;
+    --secondary-foreground: 210 20% 95%;
+    --muted: 220 15% 12%;
+    --muted-foreground: 215 15% 55%;
+    --accent: 263 70% 58%;
+    --accent-foreground: 210 20% 95%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 20% 95%;
+    --border: 220 15% 16%;
+    --input: 220 15% 16%;
+    --ring: 185 100% 50%;
+    --radius: 0.75rem;
+    --chart-1: 185 100% 50%;
+    --chart-2: 263 70% 58%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 340 75% 55%;
+    --chart-5: 160 60% 45%;
+    --sidebar-background: 220 20% 4%;
+    --sidebar-foreground: 210 20% 95%;
+    --sidebar-primary: 185 100% 50%;
+    --sidebar-primary-foreground: 220 20% 4%;
+    --sidebar-accent: 220 15% 14%;
+    --sidebar-accent-foreground: 210 20% 95%;
+    --sidebar-border: 220 15% 16%;
+    --sidebar-ring: 185 100% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* Glassmorphism utilities */
+.glass {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.glass-strong {
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Neon glow utilities */
+.neon-cyan {
+  text-shadow: 0 0 7px hsl(185 100% 50% / 0.6), 0 0 20px hsl(185 100% 50% / 0.3);
+}
+
+.neon-border-cyan {
+  box-shadow: 0 0 10px hsl(185 100% 50% / 0.15), inset 0 0 10px hsl(185 100% 50% / 0.05);
+}
+
+.neon-border-violet {
+  box-shadow: 0 0 10px hsl(263 70% 58% / 0.15), inset 0 0 10px hsl(263 70% 58% / 0.05);
+}
+
+/* Starfield animation */
+@keyframes twinkle {
+  0%, 100% { opacity: 0.2; }
+  50% { opacity: 1; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 5px hsl(185 100% 50% / 0.3); }
+  50% { box-shadow: 0 0 20px hsl(185 100% 50% / 0.6), 0 0 40px hsl(185 100% 50% / 0.2); }
+}
+
+@keyframes grid-move {
+  0% { transform: perspective(500px) rotateX(60deg) translateY(0); }
+  100% { transform: perspective(500px) rotateX(60deg) translateY(50px); }
+}
+
+.animate-twinkle {
+  animation: twinkle var(--twinkle-duration, 3s) ease-in-out infinite;
+  animation-delay: var(--twinkle-delay, 0s);
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(220 20% 4%);
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(220 15% 20%);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(185 100% 50% / 0.5);
+}
+
+html {
+  scroll-behavior: smooth;
+}
