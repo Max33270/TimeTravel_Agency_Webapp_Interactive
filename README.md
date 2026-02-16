@@ -1,6 +1,7 @@
-# TimeTravel_Agency_Webapp_Interactive
+# TimeTravel_Agency_Webapp_Interactive - CURTET Julien, DUNIAUD Marty et DOUBLAIT Maxim
 
 https://v0-chronos-horizons-landing-page-8s.vercel.app/#destinations 
+
 
 TimeTravel Agency - Webapp Interactive <br>
 Webapp pour une agence de voyage temporel fictive, créée avec IA générative. <br>
